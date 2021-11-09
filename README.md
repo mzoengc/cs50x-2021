@@ -24,3 +24,4 @@
     - [Lab 2: Scrabble](/lab2/scrabble)
     - [Problem Set 2](/pset2)
         - [Readability](/pset2/readability)
+        - [Substitution](/pset2/substitution)
