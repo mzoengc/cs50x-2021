@@ -6,7 +6,7 @@
 > - [Academic Honesty](https://cs50.harvard.edu/x/2021/honesty/)
 > - [edX](https://cs50.edx.org)
 >
-> All my works (Labs, Problem Sets, Project) for CS50 is stored in this repository.
+> Labs, Problem Sets and Project for CS50
 
 ## Table of Contents
 
@@ -25,3 +25,7 @@
     - [Problem Set 2](/pset2)
         - [Readability](/pset2/readability)
         - [Substitution](/pset2/substitution)
+- Week 3: Algorithms
+    - [Problem Set 3](/pset3)
+        - [Plurality](/pset3/plurality)
+        - [Tideman](/pset3/tideman)
