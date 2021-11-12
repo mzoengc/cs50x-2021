@@ -25,7 +25,14 @@
     - [Problem Set 2](/pset2)
         - [Readability](/pset2/readability)
         - [Substitution](/pset2/substitution)
+
 - Week 3: Algorithms
     - [Problem Set 3](/pset3)
         - [Plurality](/pset3/plurality)
         - [Tideman](/pset3/tideman)
+
+- Week 4: Memory
+    - [Lab 4: Volume](/lab4)
+    - [Problem Set 4](/pset4)
+        - [Filter (More)](/pset4/filter)
+        - [Recover](/pset4/recover)
