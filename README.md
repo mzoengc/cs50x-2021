@@ -36,3 +36,8 @@
     - [Problem Set 4](/pset4)
         - [Filter (More)](/pset4/filter)
         - [Recover](/pset4/recover)
+
+- Week 5: Data Structures
+    - [Lab 5: Inheritance](/lab5)
+    - [Problem Set 5](/pset5)
+        - [Speller](/pset5/speller)
