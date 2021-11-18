@@ -41,3 +41,12 @@
     - [Lab 5: Inheritance](/lab5)
     - [Problem Set 5](/pset5)
         - [Speller](/pset5/speller)
+
+- Week 6: Python
+    - [Lab 6: World Cup](/lab6)
+    - [Problem Set 6](/pset6)
+        - [Hello](/pset6/hello)
+        - [Mario (More)](/pset6/mario)
+        - [Credit](/pset6/credit)
+        - [Readability](/pset6/readability)
+        - [DNA](/pset6/dna)
