@@ -50,3 +50,9 @@
         - [Credit](/pset6/credit)
         - [Readability](/pset6/readability)
         - [DNA](/pset6/dna)
+
+- Week 7: SQL
+    - [Lab 7: Songs](/lab7)
+    - [Problem Set 7](/pset7)
+        - [Movies](/pset7/movies)
+        - [Fiftyville](/pset7/fiftyville)
