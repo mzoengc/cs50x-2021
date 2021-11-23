@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+    background: #f5f5f5;
+}
+
+header + main {
+    margin-top: 20px;
+}
+
+.fixed-top + main {
+    margin-top: 76px;
+}
+
+.main-container {
+    border-radius: 0.5em;
+    padding: 20px;
+    box-shadow:
+        inset 0 -3em 3em rgba(0,0,0,0.1),
+            0 0  0 2px rgb(255,255,255),
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+/* Update navbar styles */
+.navbar {
+    background-color: #002b49 !important;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.282352941176471);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,.5) !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: #f13a2f !important;
+    font-weight: 900;
+}
+
+.navbar-brand {
+    color: #fff !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.45%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar-nav .nav-link.disabled {
+    color: rgba(255,255,255,.3) !important;
+}

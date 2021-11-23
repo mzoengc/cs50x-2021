@@ -56,3 +56,8 @@
     - [Problem Set 7](/pset7)
         - [Movies](/pset7/movies)
         - [Fiftyville](/pset7/fiftyville)
+
+- Week 8: HTML, CSS, JavaScript
+    - [Lab 8: Trivia](/lab8)
+    - [Problem Set 8](/pset8)
+        - [Homepage](/pset8/homepage)

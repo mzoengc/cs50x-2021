@@ -6,3 +6,6 @@
 !*.h
 !*.py
 !*.sql
+!*.html
+!*.css
+!*.js

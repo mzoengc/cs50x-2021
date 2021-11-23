@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            function removeQ1ButtonsListener() {
+                var buttons = document.querySelectorAll(".q1_answer");
+                buttons.forEach(function(button) {
+                    button.removeEventListener('click', handleQ1Button);
+                });
+            }
+
+            function handleQ1Button(event) {
+                // confirms answer
+                var result = document.querySelector("#q1_result");
+                if (event.target.id == "16") {
+                    result.innerHTML = "Correct!";
+                    event.target.style.backgroundColor = "green";
+                    // removeQ1ButtonsListener();
+                } else {
+                    result.innerHTML = "Incorrect";
+                    event.target.style.backgroundColor = "red";
+                    // event.target.removeEventListener('click', handleQ1Button);
+                }
+            }
+
+            function listenQ1() {
+                var buttons = document.querySelectorAll(".q1_answer");
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', handleQ1Button);
+                });
+            }
+
+            function listenQ2() {
+                var result = document.querySelector("#q2_result");
+                var answer = document.querySelector("#q2_answer");
+                var button = document.querySelector("#q2_check");
+                button.addEventListener('click', function(event) {
+                    // confirm answer
+                    if (answer.value.toLowerCase() == "switzerland") {
+                        result.innerHTML = "Correct!";
+                        answer.style.borderColor = "green";
+                    } else {
+                        result.innerHTML = "Incorrect";
+                        answer.style.borderColor = "red";
+                    }
+                });
+            }
+
+            function listen() {
+                listenQ1();
+                listenQ2();
+            }
+
+            document.addEventListener('DOMContentLoaded', listen);
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                <h2 id="q1_result"></h2>
+                <button id="61" class="q1_answer">6 people per 1 sheep</button>
+                <button id="31" class="q1_answer">3 people per 1 sheep</button>
+                <button id="11" class="q1_answer">1 people per 1 sheep</button>
+                <button id="13" class="q1_answer">1 people per 3 sheep</button>
+                <button id="16" class="q1_answer">1 people per 6 sheep</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as long guinea pig might get lonely?</h3>
+                <h2 id="q2_result"></h2>
+                <input id="q2_answer" type="text" />
+                <button id="q2_check">Check Answer</button>
+
+            </div>
+
+        </div>
+    </body>
+</html>
