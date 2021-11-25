@@ -9,3 +9,6 @@
 !*.html
 !*.css
 !*.js
+!*.txt
+**/pneumonoultramicroscopicsilicovolcanoconiosis.txt
+!*.md

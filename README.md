@@ -61,3 +61,8 @@
     - [Lab 8: Trivia](/lab8)
     - [Problem Set 8](/pset8)
         - [Homepage](/pset8/homepage)
+
+- Week 9: Flask
+    - [Lab 9: Birthdays](/lab9)
+    - [Problem Set 9](/pset9)
+        - [Finance](/pset9/finance)

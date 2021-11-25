@@ -1,0 +1,126 @@
+sort1 uses: Bubble sort
+
+How do you know?: It take less time to do the sorting when the files is almost sorted but to compare with others algorithms, it take the most time.
+
+sort2 uses: Merge sort
+
+How do you know?: It had taked same time to sort the random and almost sorted files. Also in reversed file it take more time to sort. Compare others algorithms, it take the lowest time to do the sorting.
+
+sort3 uses: Selection sort
+
+How do you know?: The almost sorted files also take time to sort. That mean it will also do the same steps with others files.
+
+
+sort1
+random5000.txt
+real    0m0.135s
+user    0m0.051s
+sys     0m0.016s
+random10000.txt
+real    0m0.446s
+user    0m0.224s
+sys     0m0.016s
+random50000.txt
+real    0m19.438s
+user    0m6.418s
+sys     0m0.072s
+reversed5000.txt
+real    0m0.148s
+user    0m0.044s
+sys     0m0.016s
+reversed10000.txt
+real    0m0.374s
+user    0m0.186s
+sys     0m0.012s
+reversed50000.txt
+real    0m14.581s
+user    0m4.682s
+sys     0m0.100s
+sorted5000.txt
+real    0m0.009s
+user    0m0.004s
+sys     0m0.004s
+sorted10000.txt
+real    0m0.043s
+user    0m0.004s
+sys     0m0.020s
+sorted50000.txt
+real    0m7.603s
+user    0m0.026s
+sys     0m0.094s
+
+sort2
+random5000.txt
+real    0m0.015s
+user    0m0.004s
+sys     0m0.009s
+random10000.txt
+real    0m0.028s
+user    0m0.004s
+sys     0m0.024s
+random50000.txt
+real    0m4.221s
+user    0m0.032s
+sys     0m0.084s
+reversed5000.txt
+real    0m0.012s
+user    0m0.004s
+sys     0m0.008s
+reversed10000.txt
+real    0m0.100s
+user    0m0.000s
+sys     0m0.028s
+reversed50000.txt
+real    0m6.963s
+user    0m0.043s
+sys     0m0.085s
+sorted5000.txt
+real    0m0.014s
+user    0m0.005s
+sys     0m0.009s
+sorted10000.txt
+real    0m0.025s
+user    0m0.004s
+sys     0m0.021s
+sorted50000.txt
+real    0m4.359s
+user    0m0.036s
+sys     0m0.079s
+
+sort3
+random5000.txt
+real    0m0.039s
+user    0m0.029s
+sys     0m0.004s
+random10000.txt
+real    0m0.290s
+user    0m0.105s
+sys     0m0.012s
+random50000.txt
+real    0m9.044s
+user    0m2.377s
+sys     0m0.088s
+reversed5000.txt
+real    0m0.036s
+user    0m0.028s
+sys     0m0.008s
+reversed10000.txt
+real    0m0.228s
+user    0m0.102s
+sys     0m0.012s
+reversed50000.txt
+real    0m9.259s
+user    0m2.441s
+sys     0m0.072s
+sorted5000.txt
+real    0m0.034s
+user    0m0.025s
+sys     0m0.008s
+sorted10000.txt
+real    0m0.279s
+user    0m0.095s
+sys     0m0.024s
+sorted50000.txt
+real    0m12.518s
+user    0m2.503s
+sys     0m0.056s

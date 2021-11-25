@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="table-light">
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-start">Name</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">TOTAL</th>
+                    <th colspan="2" class="text-end">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for stock in stocks %}
+                    <tr>
+                        <td class="text-start">{{ stock.symbol }}</td>
+                        <td class="text-start">{{ stock.name }}</td>
+                        <td class="text-end">{{ stock.shares }}</td>
+                        <td class="text-end">{{ stock.price | usd }}</td>
+                        <td class="text-end">{{ (stock.price * stock.shares) | usd }}</td>
+                        <td colspan="2" class="text-end">
+                            <button
+                                class="btn btn-primary"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#{{ stock.symbol }}-action"
+                                aria-expanded="false"
+                                aria-controls="{{ stock.symbol }}-action"
+                            >
+                                More
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="collapse" id="{{ stock.symbol }}-action">
+                        <td colspan="5"></td>
+                        <td style="max-width: 150px;">
+                            <form action="/buy" method="post">
+                                <input name="symbol" value="{{ stock.symbol }}" type="hidden">
+                                <input autocomplete="off" autofocus class="form-control w-50" name="shares" placeholder="Shares" type="number" min="1" max="{{ cash / stock.price }}">
+                                <button class="btn btn-primary" type="submit">Buy</button>
+                            </form>
+                        </td>
+                        <td style="max-width: 150px;">
+                            <form action="/sell" method="post">
+                                <input name="symbol" value="{{ stock.symbol }}" type="hidden">
+                                <input autocomplete="off" autofocus class="form-control w-50" name="shares" placeholder="Shares" type="number" min="1" max="{{ stock.shares }}">
+                                <button class="btn btn-primary" type="submit">Sell</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4" class="border-0 fw-bold text-end">Cash</th>
+                    <td class="border-0 text-end">{{ cash | usd }}</td>
+                </tr>
+                <tr>
+                    <th colspan="4" class="border-0 fw-bold text-end">TOTAL</th>
+                    <td class="border-0 text-end">{{ total | usd }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}
