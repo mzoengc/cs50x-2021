@@ -8,6 +8,7 @@ My solutions to labs, problem sets and final project of CS50
 - [CS50x](https://cs50.harvard.edu/x/2021/)
 - [Academic Honesty](https://cs50.harvard.edu/x/2021/honesty/)
 - [edX](https://cs50.edx.org)
+- [My Certificates](https://cs50.harvard.edu/certificates/34256308-f045-4e2a-b2e7-78c851294bf4)
 
 ## Table of Contents
 - [Week 0: Scratch](#week-0-scratch)
