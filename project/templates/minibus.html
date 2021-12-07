@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Info
+{% endblock %}
+
+{% block main %}
+<div class="d-flex flex-column w-100 align-items-center">
+    <h2 class="{{ minibus.district }}">{{ minibus.district }} {{ minibus.route_name }}</h2>
+
+    <h3 class="mt-3">Information</h3>
+    <div class="text-start d-flex flex-column wx-auto">
+        <span>Company Code: {{ minibus.company_code }}</span>
+        <span>Start: {{ minibus.start_name }}</span>
+        <span>End: {{ minibus.end_name }}</span>
+        <span>Duration: {{ minibus.duration }} minutes</span>
+        <span>Price: ${{ minibus.price }}</span>
+        <a href="{{ minibus.url }}">More Information</a>
+    </div>
+</div>
+
+<div class="w-100 mt-3">
+    {% if routes.data.data_timestamp %}
+    <h3>Route Stops</h3>
+    <ol class="list-group list-group-flush list-group-numbered text-start">
+        {% for stop in routes.data.route_stops %}
+        <li class="list-group-item d-flex w-100" {% if session.user_id %}style="height: 250px;"{% endif %}>
+            <span> {{ stop.name_en }}</span>
+            {% if session.user_id %}
+            <script>
+            function get_realtime_data_{{ stop.stop_seq }}(){
+                // call server
+                $.getJSON("/api/realtime/{{ minibus.route_id }}/{{ minibus.route_seq }}/{{ stop.stop_seq }}", function(data) {
+                        $("#eta-{{ stop.stop_seq }}").empty();
+                        data.eta.forEach(d => {
+                            var h5 = "<h5>Now</h5>";
+                            var small = "<small>None</small>";
+                            if (d.diff > 0) {
+                                h5 = "<h5>" + d.diff + " mins </h5>";
+                            }
+                            if (d.remarks_en) {
+                                small = "<small>"+ d.remarks_en  + "</small>";
+                            }
+                            var html = "<div>" + h5 + small + "</div>";
+                            $("#eta-{{ stop.stop_seq }}").append(html);
+                        });
+                    }
+                );
+            }
+            $(document).ready(function () {
+                get_realtime_data_{{ stop.stop_seq }}()
+                setInterval(get_realtime_data_{{ stop.stop_seq }}, 30000);
+            })
+            </script>
+            <div class="ms-auto">
+                <form action="/realtime" method="POST">
+                    <input name="route_id" value="{{ minibus.route_id }}" style="display: none;"/>
+                    <input name="route_seq" value="{{ minibus.route_seq }}" style="display: none;"/>
+                    <input name="stop_seq" value="{{ stop.stop_seq }}" style="display: none;"/>
+                    <button type="submit" class="btn btn-primary mb-2">Add to Home</button>
+                </form>
+                <div id="eta-{{ stop.stop_seq }}"></div>
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+    <small>Last Updated: {{ routes.data.data_timestamp | date }}</small>
+    {% else %}
+    <img alt="No Data" class="border" src="https://api.memegen.link/images/doge/Sorry/No API Data.png?width=400" title="No Data">
+    {% endif %}
+</div>
+{% endblock %}

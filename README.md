@@ -76,4 +76,5 @@ My solutions to labs, problem sets and final project of CS50
 ## Week 10: Ethics
 
 ## Final Project
+- [Project](/project)
 

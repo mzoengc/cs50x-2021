@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div id="realtime"></div>
+
+<script>
+function get_realtime_data(){
+    // call server
+    $.ajax({
+        url: "/realtime",
+        type: "get",
+        success: function(response) {
+            // inner
+            $("#realtime").html(response);
+        },
+        error: function(xhr) {
+            // Do Something to handle error
+        }
+    });
+}
+$(document).ready(function () {
+    get_realtime_data()
+    setInterval(get_realtime_data , 30000);
+})
+</script>
+{% endblock %}

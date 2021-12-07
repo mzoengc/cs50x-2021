@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    <form action="minibus" method="GET">
+        <select class="form-select w-auto d-inline" id="option">
+            <option disabled="">Option</option>
+            <option value="route_name" selected="">Route Name</option>
+        </select>
+        <input id="search" autocomplete="off" class="form-control" placeholder="Search" type="text" />
+    </form>
+</div>
+
+<div id="minibuses">
+    {% include "minibuses_list.html" %}
+</div>
+<script>
+
+// Search by user input
+$("#search").keyup(function(){
+    var text = $(this).val();
+    var option = $("#option").val();
+    var script = document.createElement("script");
+    script.setAttribute("src", "https://unpkg.com/htmx.org@1.6.1");
+
+    // call server
+    $.ajax({
+        url: "/minibuses?option=" + option + "&search=" + text.toUpperCase(),
+        type: "get",
+        success: function(response) {
+            // inner
+            $("#minibuses").html(response).append(script);
+        },
+        error: function(xhr) {
+            // Do Something to handle error
+        }
+    });
+});
+</script>
+{% endblock %}

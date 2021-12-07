@@ -1,0 +1,25 @@
+{% for minibus in minibuses %}
+<a
+    class="card text-start"
+    href="/minibus/{{ minibus.route_id }}/{{ minibus.route_seq }}"
+    {% if loop.index == minibuses|length  %}
+    hx-get="{{ more }}"
+    hx-trigger="revealed"
+    hx-swap="afterend"
+    {% endif %}
+>
+    <div class="card-body">
+        <div class="card-title d-flex w-100">
+            <h5>{{ minibus.route_name }}</h5>
+            <b class="ms-2">{{ minibus.end_name }}</b>
+            <span class="{{ minibus.district }} ms-auto">{{ minibus.district }}</span>
+        </div>
+        <!--<p class="mb-1">To {{ minibus.endName }}</p>-->
+        <div class="card-text d-flex">
+            <div>
+                <p class="mb-1">From {{ minibus.start_name }} <small>(${{ minibus.price }})</small></p>
+            </div>
+        </div>
+    </div>
+</a>
+{% endfor %}

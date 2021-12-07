@@ -1,0 +1,43 @@
+{% for route in routes %}
+<div class="d-flex w-100">
+    <a class="card w-100 text-start" href="/minibus/{{ route.route_id }}/{{ route.route_seq }}">
+        <div class="card-body">
+            <div class="card-title d-flex w-100">
+                <h5>{{ route.route_name }}</h5>
+                <b class="ms-2">{{ route.end_name }}</b>
+                <span class="{{ route.district }} ms-auto">{{ route.district }}</span>
+            </div>
+            <div class="card-text d-flex">
+                <div>
+                    <p class="mb-1">{{ route.name_en }}</p>
+                    <small class="mb-1">From {{ route.start_name }}</small>
+                </div>
+                <div class="ms-auto">
+                   <h5>{% if route.diff > 0 %}{{ route.diff }} mins {% else %}Now{% endif %}</h5>
+                   <small>{{ route.remark }}</small>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="pull-right">
+        {% if route.isAdded %}<button type="button" class="btn-close" onclick="deleteAdded({{ route.route_id }}, {{ route.route_seq }}, {{ route.stop_seq }})"></button>{% endif %}
+    </div>
+</div>
+{% endfor %}
+
+<script>
+function deleteAdded(route_id, route_seq, stop_seq){
+    // call server
+    $.ajax({
+        url: "/api/realtime/" + route_id +"/" + route_seq + "/" + stop_seq,
+        type: "delete",
+        success: function(response) {
+            // inner
+            window.location.reload(1);
+        },
+        error: function(xhr) {
+            // Do Something to handle error
+        }
+    });
+}
+</script>
